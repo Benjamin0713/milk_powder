@@ -91,7 +91,7 @@ y_pred = my_model.predict(X_test)
 
 explainer = shap.TreeExplainer(my_model)
 shap_values = explainer.shap_values(X)  # 传入特征矩阵X，计算SHAP值
-
+print(shap_values.shape)
 # 可视化第一个prediction的解释   如果不想用JS,传入matplotlib=True
 shap.force_plot(explainer.expected_value, shap_values[0,:], X.iloc[0,:])
 

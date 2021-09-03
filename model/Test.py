@@ -14,7 +14,7 @@ feature = pd.read_csv(csv_file,
                                 ,21,22,23,24,25,26,27,28,29])
 target = pd.read_csv(csv_file, header=0, encoding='utf-8',usecols=[30])
 
-X_train, X_test, y_train, y_test = train_test_split(feature, target, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(feature, target, test_size=0.2,random_state=1)
 # 1
 gbm = lgb.LGBMRegressor(objective='regression',
                               max_depth = 3,

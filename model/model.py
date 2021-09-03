@@ -10,7 +10,7 @@ from sklearn import preprocessing
 from torch import nn
 
 data = pd.read_csv('../data/Mean_Cope1.csv', header=0)
-# print(data)
+print(data)
 
 # X_train = data['i1_r'].values.reshape(-1,1)
 # Y_train = data['o12_r'].values.reshape(-1,1)

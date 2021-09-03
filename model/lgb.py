@@ -12,13 +12,13 @@ feature = pd.read_csv(csv_file,
                           usecols=[0,1,2,3,4,5,6,7,8,9,10,
                                 11,12,13,14,15,16,17,18,19,20
                                 ,21,22,23,24,25,26,27,28,29])
-target = pd.read_csv(csv_file, header=0, encoding='utf-8',usecols=[30])
+target = pd.read_csv(csv_file, header=0, encoding='utf-8',usecols=[41])
 
 # print(type(feature))
 # print(type(target))
 # print(feature)
 # print(target)
-X_train, X_test, y_train, y_test = train_test_split(feature, target, test_size=0.01)
+X_train, X_test, y_train, y_test = train_test_split(feature, target, test_size=0.01,random_state=1)
 
 lgb_train = lgb.Dataset(X_train, y_train)
 lgb_eval = lgb.Dataset(X_test, y_test, reference=lgb_train)
